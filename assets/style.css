@@ -7,6 +7,8 @@
 body {
     background: url('img/bg-desktop.webp') no-repeat center/cover;
     font-family: 'Bai Jamjuree', sans-serif;
+    margin: 0; /* Garantir que a margem do body seja 0 */
+    padding: 0; /* Garantir que o padding do body seja 0 */
 }
 
 #container {
@@ -20,7 +22,7 @@ body {
     height: 20rem;
     flex-grow: 1;
     flex-basis: calc(33% - 6rem);
-    perspective: 1000px; /* ajuda na rotação 3D */
+    perspective: 1000px; /* Para rotação 3D */
 }
 
 .cartao__conteudo {
@@ -88,6 +90,7 @@ footer {
     height: 2rem;
     text-align: center;
     line-height: 2rem;
+    z-index: 10; /* Para garantir que o rodapé fique acima do conteúdo */
 }
 
 /* 🔹 Responsividade */
@@ -96,15 +99,18 @@ footer {
         background: url('img/bg-mobile.webp') no-repeat center/cover;
     }
 
+    /* Ajuste da largura e margem para telas menores */
     .cartao {
-        flex: 1 0 calc(100% - 1rem);
+        flex: 1 0 calc(100% - 2rem); /* Diminuindo a margem entre os cartões */
     }
 
+    /* Ajuste do tamanho da fonte no cabeçalho */
     .cartao__conteudo h3 {
-        font-size: 3vw;
+        font-size: 4vw; /* Aumentando um pouco o tamanho da fonte para telas menores */
     }
 
+    /* Ajuste do tamanho da fonte no parágrafo */
     .cartao__conteudo p {
-        font-size: 3.8vw;
+        font-size: 4vw; /* Aumentando o tamanho da fonte para telas pequenas */
     }
 }
